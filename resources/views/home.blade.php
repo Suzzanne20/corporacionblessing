@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Corporación Blessing | Información Corporativa</title>
+    <title>Corporación Blessing</title>
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Suzzanne20/ResourceNekoStation/refs/heads/main/Resource%20Corp%20Blessing/1772249876053.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -79,6 +80,23 @@
             color: var(--primary-dark);
             text-transform: uppercase;
         }
+        .brand{
+            display:flex;
+            align-items:center;
+            gap:.65rem;
+            font-size: 1rem;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            color: var(--primary-dark);
+            text-transform: uppercase;
+            }
+            .brand-logo{
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0 10px 24px rgba(15,23,42,.12);
+            }
 
         .nav {
             display: flex;
@@ -227,37 +245,76 @@
             font-size: 1.15rem;
         }
 
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(12, minmax(0, 1fr));
-            gap: 0.75rem;
+        .gallery{
+        display:grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        gap: .85rem;
         }
 
-        .gallery-item {
-            position: relative;
-            border-radius: 16px;
-            overflow: hidden;
-            min-height: 170px;
-            border: 1px solid rgba(255, 255, 255, 0.8);
-            box-shadow: var(--shadow);
+        .gallery-item{
+        position:relative;
+        border-radius: 18px;
+        overflow:hidden;
+        border: 1px solid rgba(255,255,255,.8);
+        box-shadow: var(--shadow);
+        min-height: 220px;
+        grid-column: span 4;
+        background:#0b1d4f;
         }
 
-        .gallery-item::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(160deg, rgba(31, 95, 255, 0.85), rgba(34, 195, 166, 0.8));
+        .gallery-item img{
+        width:100%;
+        height:100%;
+        object-fit: cover;
+        display:block;
+        transform: scale(1.02);
+        transition: transform .35s ease, filter .35s ease;
+        filter: saturate(1.05) contrast(1.02);
         }
 
-        .gallery-item::after {
-            content: attr(data-label);
-            position: absolute;
-            left: 1rem;
-            bottom: 1rem;
-            color: #fff;
-            font-weight: 700;
-            font-size: 0.95rem;
-            letter-spacing: 0.02em;
+        /* Etiqueta (solo texto, sin tapar imagen) */
+        .gallery-item::after{
+        content: attr(data-label);
+        position:absolute;
+        left: 14px;
+        bottom: 14px;
+        padding: .45rem .7rem;
+        border-radius: 999px;
+        font-weight: 800;
+        font-size: .9rem;
+        letter-spacing: .02em;
+        color:#fff;
+        background: rgba(15, 23, 42, .55);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255,255,255,.18);
+        }
+
+        /* Overlay suave SOLO en hover */
+        .gallery-item::before{
+        content:"";
+        position:absolute;
+        inset:0;
+        background: linear-gradient(180deg, transparent 35%, rgba(15,23,42,.75) 100%);
+        opacity: .55;
+        transition: opacity .35s ease;
+        }
+
+        .gallery-item:hover::before{ opacity: .85; }
+        .gallery-item:hover img{ transform: scale(1.08); }
+
+        /* Variantes para “malla” */
+        .gallery-item.wide{ grid-column: span 8; }
+        .gallery-item.tall{ grid-column: span 4; min-height: 320px; }
+
+        /* Responsive */
+        @media (max-width: 960px){
+        .gallery-item{ grid-column: span 6; }
+        .gallery-item.wide{ grid-column: span 12; }
+        }
+        @media (max-width: 620px){
+        .gallery-item,
+        .gallery-item.wide,
+        .gallery-item.tall{ grid-column: span 12; min-height: 240px; }
         }
 
         .span-7 { grid-column: span 7; }
@@ -347,12 +404,35 @@
                 height: 250px;
             }
         }
+        .hero-side h2{ color:#fff; }
+        .hero-side p{ color: rgba(255,255,255,.88); }
+        .stat-card p{ color: rgba(255,255,255,.92); }
+        .stat-card{ background: rgba(255,255,255,.16); }
+        .hero-logo{
+            margin: .35rem 0 1.1rem;
+            display:flex;
+            align-items:center;
+            gap:.8rem;
+            }
+            .hero-logo img{
+            width: 150px;
+            height: 150px;
+            border-radius: 18px;
+            object-fit: contain; /* si es logo con transparencia */
+            background: rgba(255,255,255,.7);
+            padding: 10px;
+            box-shadow: 0 18px 36px rgba(15,23,42,.12);
+            border: 1px solid rgba(15,23,42,.06);
+            }
     </style>
 </head>
 
 <body>
     <header class="container glass topbar">
-        <a class="brand" href="#inicio">Corporación Blessing</a>
+        <a class="brand" href="#inicio" aria-label="Corporación Blessing">
+            <img class="brand-logo" src="https://raw.githubusercontent.com/Suzzanne20/ResourceNekoStation/refs/heads/main/Resource%20Corp%20Blessing/1772249876053.png" alt="Logo Corporación Blessing">
+            <span>Corporación Blessing</span>
+        </a>
         <nav class="nav">
             <a href="#mision-vision">Misión & Visión</a>
             <a href="#galeria">Galería</a>
@@ -365,37 +445,40 @@
         <section class="hero">
             <article class="glass hero-main">
                 <span class="eyebrow">Excelencia empresarial</span>
-                <h1>Una presencia corporativa moderna, confiable y orientada al crecimiento.</h1>
+                <div class="hero-logo">
+                <img src="https://raw.githubusercontent.com/Suzzanne20/ResourceNekoStation/refs/heads/main/Resource%20Corp%20Blessing/1772249876053.png" alt="Logo Corporación Blessing">
+                </div>
+                <h1>Transporte de carga con 15 años moviendo confianza</h1>
                 <p>
-                    En Corporación Blessing impulsamos soluciones empresariales con enfoque humano y visión de futuro.
-                    Esta página presenta nuestra esencia: quiénes somos, hacia dónde vamos y cómo conectamos con clientes,
-                    aliados y comunidades.
+                En Corporación Blessing brindamos soluciones logísticas y transporte terrestre para carga contenedorizada
+                y mercancías especiales. Operamos con enfoque en seguridad, puntualidad y trazabilidad, cuidando cada
+                etapa: planificación, carga, traslado y entrega
                 </p>
                 <div class="hero-actions">
-                    <a class="btn btn-primary" href="#contacto">Hablar con nosotros</a>
-                    <a class="btn btn-secondary" href="#galeria">Ver galería</a>
+                    <a class="btn btn-primary" href="#contacto">Contáctanos</a>
+                    <a class="btn btn-secondary" href="#galeria">Ver flota y operaciones</a>
                 </div>
             </article>
 
             <aside class="glass hero-side">
                 <h2>Nuestro impacto</h2>
-                <p>Compromiso permanente con innovación, eficiencia y calidad en cada proyecto.</p>
+                <p>Logística terrestre con experiencia, cumplimiento y operación segura en cada ruta</p>
                 <div class="stats">
                     <div class="stat-card">
-                        <h3>+10</h3>
-                        <p>Años de experiencia corporativa.</p>
+                        <h3>+15</h3>
+                        <p>Años de experiencia en el transporte de carga</p>
                     </div>
                     <div class="stat-card">
-                        <h3>+120</h3>
-                        <p>Proyectos ejecutados con éxito.</p>
+                        <h3>+1,000</h3>
+                        <p>Traslados y operaciones realizaddas</p>
                     </div>
                     <div class="stat-card">
                         <h3>24/7</h3>
-                        <p>Atención y acompañamiento.</p>
+                        <p>Logística y seguimiento</p>
                     </div>
                     <div class="stat-card">
-                        <h3>100%</h3>
-                        <p>Enfoque en mejora continua.</p>
+                        <h3>Seguridad</h3>
+                        <p>Protocolos y control operativos</p>
                     </div>
                 </div>
             </aside>
@@ -407,15 +490,15 @@
                 <article class="card glass">
                     <h3>Misión</h3>
                     <p>
-                        Ofrecer soluciones integrales que agreguen valor a nuestros clientes mediante procesos
-                        eficientes, innovación constante y un equipo comprometido con la excelencia.
+                        Brindar servicios de transporte terrestre y soluciones logísticas para carga contenedorizada y mercancías especiales,
+                        garantizando seguridad, puntualidad y eficiencia, con un equipo comprometido y una operación orientada a la mejora continua.
                     </p>
                 </article>
                 <article class="card glass">
                     <h3>Visión</h3>
                     <p>
-                        Ser una corporación referente en nuestro sector por la calidad de nuestros servicios,
-                        la confianza de nuestros aliados y el impacto positivo que generamos en la sociedad.
+                        Consolidarnos como una transportista referente en Guatemala por la confiabilidad de nuestras entregas,
+                        la solidez de nuestra operación y la confianza construida con clientes y aliados a lo largo del tiempo.
                     </p>
                 </article>
             </div>
@@ -423,13 +506,24 @@
 
         <section id="galeria" class="section">
             <h2 class="section-title">Galería corporativa</h2>
-            <div class="gallery">
-                <article class="gallery-item span-7" data-label="Operación estratégica"><img src="https://raw.githubusercontent.com/Suzzanne20/ResourceNekoStation/refs/heads/main/Resource%20Corp%20Blessing/1.jpg"></article>
-                <article class="gallery-item span-5" data-label="Equipo profesional"><img src="https://raw.githubusercontent.com/Suzzanne20/ResourceNekoStation/refs/heads/main/Resource%20Corp%20Blessing/1.jpg"></article>
-                <article class="gallery-item span-4" data-label="Innovación constante"><img src="https://raw.githubusercontent.com/Suzzanne20/ResourceNekoStation/refs/heads/main/Resource%20Corp%20Blessing/1.jpg"></article>
-                <article class="gallery-item span-4" data-label="Gestión de proyectos"><img src="https://raw.githubusercontent.com/Suzzanne20/ResourceNekoStation/refs/heads/main/Resource%20Corp%20Blessing/1.jpg"></article>
-                <article class="gallery-item span-4" data-label="Alianzas de valor"><img src="https://raw.githubusercontent.com/Suzzanne20/ResourceNekoStation/refs/heads/main/Resource%20Corp%20Blessing/1.jpg"></article>
-            </div>
+                <div class="gallery">
+                <article class="gallery-item tall" data-label="Operación estratégica">
+                    <img src="https://raw.githubusercontent.com/Suzzanne20/ResourceNekoStation/refs/heads/main/Resource%20Corp%20Blessing/11.jpeg" alt="Equipo profesional">
+                    
+                </article>
+                <article class="gallery-item wide" data-label="Equipo profesional">
+                    <img src="https://raw.githubusercontent.com/Suzzanne20/ResourceNekoStation/refs/heads/main/Resource%20Corp%20Blessing/44.jpeg" alt="Operación estratégica">
+                </article>
+                <article class="gallery-item" data-label="Innovación constante">
+                    <img src="https://raw.githubusercontent.com/Suzzanne20/ResourceNekoStation/refs/heads/main/Resource%20Corp%20Blessing/22.jpeg" alt="Innovación constante">
+                </article>
+                <article class="gallery-item" data-label="Gestión de proyectos">
+                    <img src="https://raw.githubusercontent.com/Suzzanne20/ResourceNekoStation/refs/heads/main/Resource%20Corp%20Blessing/33.jpeg" alt="Gestión de proyectos">
+                </article>
+                <article class="gallery-item tall" data-label="Alianzas de valor">
+                    <img src="https://raw.githubusercontent.com/Suzzanne20/ResourceNekoStation/refs/heads/main/Resource%20Corp%20Blessing/555.jpeg" alt="Alianzas de valor">
+                </article>
+                </div>
         </section>
 
         <section id="ubicacion" class="section">
@@ -437,17 +531,17 @@
             <div class="location-wrap">
                 <article class="glass location-text">
                     <h3>Corporación Blessing</h3>
-                    <p>Estamos ubicados estratégicamente para atender a nuestros clientes con cercanía y eficiencia.</p>
+                    <p>Estamos ubicados estratégicamente asegurar tiempos de respuesta eficientes para cada cliente</p>
                     <p><strong>Dirección:</strong> Puerto Barrios, Izabal</p>
-                    <p><strong>Horario:</strong> Lunes a Viernes · 8:00 AM - 6:00 PM</p>
+                    <p><strong>Horario:</strong> Lunes a Sábado · 8:00 AM - 6:00 PM</p>
                     <p><strong>Teléfono:</strong> +502 4557-3507</p>
                 </article>
                 <article class="glass map">
                     <iframe
-                        title="Mapa ubicación Corporación Blessing"
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"
-                        src="https://www.google.com/maps?q=Bogota%20Colombia&output=embed">
+                    title="Mapa ubicación Corporación Blessing"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    src="https://www.google.com/maps?q=15.695922626500904, -88.58861211956285&z=16&output=embed">
                     </iframe>
                 </article>
             </div>
@@ -455,7 +549,7 @@
 
         <section id="contacto" class="contact glass">
             <h2 class="section-title" style="color:#fff; margin-bottom: 0;">Contáctanos</h2>
-            <p>Estamos listos para escuchar tus necesidades y construir soluciones a la medida de tu empresa.</p>
+            <p>Cuéntanos el tipo de carga y destino. Te apoyamos con una cotización y coordinación inmediata.</p>
             <ul class="contact-list">
                 <li>📞 +502 4557-3507</li>
                 <li>✉️ logistica@corporacionblessing.com</li>
