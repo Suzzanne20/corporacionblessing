@@ -438,6 +438,7 @@
             <a href="#galeria">Galería</a>
             <a href="#ubicacion">Ubicación</a>
             <a href="#contacto">Contáctanos</a>
+            <a href="{{ route('soluciones') }}">Soluciones</a>
         </nav>
     </header>
 
@@ -457,6 +458,7 @@
                 <div class="hero-actions">
                     <a class="btn btn-primary" href="#contacto">Contáctanos</a>
                     <a class="btn btn-secondary" href="#galeria">Ver flota y operaciones</a>
+                    <a class="btn btn-secondary" href="{{ route('soluciones') }}">Ver centro de soluciones</a>
                 </div>
             </article>
 
@@ -524,6 +526,22 @@
                     <img src="https://raw.githubusercontent.com/Suzzanne20/ResourceNekoStation/refs/heads/main/Resource%20Corp%20Blessing/555.jpeg" alt="Alianzas de valor">
                 </article>
                 </div>
+        </section>
+
+
+
+        <section class="section" id="soluciones-plus">
+            <h2 class="section-title">Un plus profesional para tus clientes</h2>
+            <article class="card glass">
+                <h3>Nuevo: Centro de Soluciones Logísticas</h3>
+                <p>
+                    Habilitamos una página adicional con flujo operativo y un simulador rápido de inversión logística
+                    para proyectar costos de traslado de forma referencial, sin utilizar base de datos.
+                </p>
+                <div class="hero-actions" style="margin-top: .75rem;">
+                    <a class="btn btn-primary" href="{{ route('soluciones') }}">Explorar nueva sección</a>
+                </div>
+            </article>
         </section>
 
         <section id="ubicacion" class="section">
