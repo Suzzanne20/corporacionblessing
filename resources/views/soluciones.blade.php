@@ -186,6 +186,10 @@
             <h1>Centro de Soluciones Logísticas</h1>
             <p>
                 Esta sección suma un enfoque más profesional al sitio: explica de forma clara cómo trabajamos,
+<<<<<<< HEAD
+=======
+                qué controles aplicamos y permite una simulación rápida de inversión logística sin necesidad de base de datos.
+>>>>>>> 11248ecdcb6735b14542e98066b28e13eb860149
             </p>
         </section>
 
@@ -254,4 +258,8 @@
     </script>
 </body>
 
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> 11248ecdcb6735b14542e98066b28e13eb860149

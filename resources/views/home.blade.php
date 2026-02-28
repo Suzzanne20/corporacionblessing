@@ -456,7 +456,12 @@
                 etapa: planificación, carga, traslado y entrega
                 </p>
                 <div class="hero-actions">
+<<<<<<< HEAD
                     <a class="btn btn-primary" href="#galeria">Ver flota y operaciones</a>
+=======
+                    <a class="btn btn-primary" href="#contacto">Contáctanos</a>
+                    <a class="btn btn-secondary" href="#galeria">Ver flota y operaciones</a>
+>>>>>>> 11248ecdcb6735b14542e98066b28e13eb860149
                     <a class="btn btn-secondary" href="{{ route('soluciones') }}">Ver centro de soluciones</a>
                 </div>
             </article>
@@ -527,6 +532,7 @@
                 </div>
         </section>
 
+<<<<<<< HEAD
         <section class="section" id="soluciones-plus">
             <h2 class="section-title">Un plus profesional para tus clientes</h2>
             <article class="card glass">
@@ -537,6 +543,20 @@
                 </p>
                 <div class="hero-actions" style="margin-top: .75rem;">
                     <a class="btn btn-primary" href="{{ route('soluciones') }}">Explorar</a>
+=======
+
+
+        <section class="section" id="soluciones-plus">
+            <h2 class="section-title">Un plus profesional para tus clientes</h2>
+            <article class="card glass">
+                <h3>Nuevo: Centro de Soluciones Logísticas</h3>
+                <p>
+                    Habilitamos una página adicional con flujo operativo y un simulador rápido de inversión logística
+                    para proyectar costos de traslado de forma referencial, sin utilizar base de datos.
+                </p>
+                <div class="hero-actions" style="margin-top: .75rem;">
+                    <a class="btn btn-primary" href="{{ route('soluciones') }}">Explorar nueva sección</a>
+>>>>>>> 11248ecdcb6735b14542e98066b28e13eb860149
                 </div>
             </article>
         </section>
