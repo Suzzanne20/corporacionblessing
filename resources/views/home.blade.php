@@ -105,6 +105,18 @@
             gap: 0.4rem;
         }
 
+        .nav-toggle {
+            display: none;
+            border: 1px solid rgba(31, 95, 255, 0.25);
+            background: #fff;
+            color: var(--primary-dark);
+            border-radius: 10px;
+            padding: 0.45rem 0.7rem;
+            font-size: 0.95rem;
+            font-weight: 800;
+            cursor: pointer;
+        }
+
         .nav a {
             font-size: 0.9rem;
             font-weight: 600;
@@ -384,10 +396,33 @@
             .topbar {
                 position: static;
                 margin-top: 12px;
+                align-items: flex-start;
+            }
+
+            .nav-toggle {
+                display: inline-flex;
+                margin-left: auto;
+                align-items: center;
+                justify-content: center;
             }
 
             .nav {
+                display: none;
+                width: 100%;
                 justify-content: flex-start;
+                flex-direction: column;
+                gap: 0.2rem;
+                padding-top: 0.35rem;
+            }
+
+            .nav.open {
+                display: flex;
+            }
+
+            .nav a {
+                width: 100%;
+                border-radius: 10px;
+                padding: 0.55rem 0.75rem;
             }
 
             .gallery .span-7,
@@ -433,7 +468,8 @@
             <img class="brand-logo" src="https://raw.githubusercontent.com/Suzzanne20/ResourceNekoStation/refs/heads/main/Resource%20Corp%20Blessing/1772249876053.png" alt="Logo Corporación Blessing">
             <span>Corporación Blessing</span>
         </a>
-        <nav class="nav">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">☰ Menú</button>
+        <nav class="nav" id="main-nav">
             <a href="#mision-vision">Misión & Visión</a>
             <a href="#galeria">Galería</a>
             <a href="#ubicacion">Ubicación</a>
@@ -576,6 +612,15 @@
     <footer>
         © {{ date('Y') }} Corporación Blessing. Todos los derechos reservados.
     </footer>
+    <script>
+        const navToggle = document.querySelector('.nav-toggle');
+        const mainNav = document.getElementById('main-nav');
+
+        navToggle?.addEventListener('click', function () {
+            const isOpen = mainNav.classList.toggle('open');
+            navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+    </script>
 </body>
 
 </html>
