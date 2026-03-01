@@ -59,6 +59,17 @@
         .brand img { width: 40px; height: 40px; border-radius: 12px; }
 
         .nav { display: flex; gap: .55rem; flex-wrap: wrap; }
+        .nav-toggle {
+            display: none;
+            border: 1px solid rgba(31,95,255,.25);
+            background: #fff;
+            color: var(--primary-dark);
+            border-radius: 10px;
+            padding: .45rem .7rem;
+            font-size: .95rem;
+            font-weight: 800;
+            cursor: pointer;
+        }
         .nav a {
             text-decoration: none;
             font-size: .9rem;
@@ -165,6 +176,37 @@
         @media (max-width: 900px) {
             .grid { grid-template-columns: 1fr; }
         }
+
+        @media (max-width: 780px) {
+            .topbar {
+                align-items: flex-start;
+            }
+
+            .nav-toggle {
+                display: inline-flex;
+                margin-left: auto;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .nav {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                gap: .2rem;
+                padding-top: .35rem;
+            }
+
+            .nav.open {
+                display: flex;
+            }
+
+            .nav a {
+                width: 100%;
+                border-radius: 10px;
+                padding: .55rem .75rem;
+            }
+        }
     </style>
 </head>
 
@@ -174,7 +216,8 @@
             <img src="https://raw.githubusercontent.com/Suzzanne20/ResourceNekoStation/refs/heads/main/Resource%20Corp%20Blessing/1772249876053.png" alt="Logo Corporación Blessing">
             <span>Corporación Blessing</span>
         </a>
-        <nav class="nav">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">☰ Menú</button>
+        <nav class="nav" id="main-nav">
             <a href="{{ route('home') }}">Inicio</a>
             <a href="#flujo">Flujo de servicio</a>
             <a href="#simulador">Simulador</a>
@@ -237,8 +280,15 @@
     </main>
 
     <script>
+        const navToggle = document.querySelector('.nav-toggle');
+        const mainNav = document.getElementById('main-nav');
         const form = document.getElementById('quoteForm');
         const resultado = document.getElementById('resultado');
+
+        navToggle?.addEventListener('click', function () {
+            const isOpen = mainNav.classList.toggle('open');
+            navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
 
         form.addEventListener('submit', function (event) {
             event.preventDefault();
