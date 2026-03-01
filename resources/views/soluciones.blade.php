@@ -216,7 +216,7 @@
             <img src="https://raw.githubusercontent.com/Suzzanne20/ResourceNekoStation/refs/heads/main/Resource%20Corp%20Blessing/1772249876053.png" alt="Logo Corporación Blessing">
             <span>Corporación Blessing</span>
         </a>
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">☰ Menú</button>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">☰</button>
         <nav class="nav" id="main-nav">
             <a href="{{ route('home') }}">Inicio</a>
             <a href="#flujo">Flujo de servicio</a>
