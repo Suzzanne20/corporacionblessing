@@ -132,7 +132,7 @@
         }
 
         .hero {
-            padding: 5.5rem 0 2.5rem;
+            padding: 4.8rem 0 2.5rem;
             display: grid;
             grid-template-columns: 1.3fr 1fr;
             gap: 1.4rem;
@@ -447,6 +447,7 @@
             margin: .35rem 0 1.1rem;
             display:flex;
             align-items:center;
+            justify-content: center;
             gap:.8rem;
             }
             .hero-logo img{
@@ -456,7 +457,6 @@
             object-fit: contain; /* si es logo con transparencia */
             background: rgba(255,255,255,.7);
             padding: 10px;
-            box-shadow: 0 18px 36px rgba(15,23,42,.12);
             border: 1px solid rgba(15,23,42,.06);
             }
     </style>
