@@ -450,8 +450,8 @@
             gap:.8rem;
             }
             .hero-logo img{
-            width: 150px;
-            height: 150px;
+            width: 175px;
+            height: 175px;
             border-radius: 18px;
             object-fit: contain; /* si es logo con transparencia */
             background: rgba(255,255,255,.7);
@@ -474,7 +474,6 @@
             <a href="#galeria">Galería</a>
             <a href="#ubicacion">Ubicación</a>
             <a href="#contacto">Contáctanos</a>
-            <a href="{{ route('soluciones') }}">Soluciones</a>
         </nav>
     </header>
 
@@ -493,7 +492,7 @@
                 </p>
                 <div class="hero-actions">
                     <a class="btn btn-primary" href="#galeria">Ver flota y operaciones</a>
-                    <a class="btn btn-secondary" href="{{ route('soluciones') }}">Ver centro de soluciones</a>
+                    <a class="btn btn-secondary" href="#contacto">Contáctanos</a>
                 </div>
             </article>
 
@@ -563,19 +562,6 @@
                 </div>
         </section>
 
-        <section class="section" id="soluciones-plus">
-            <h2 class="section-title">Un plus profesional para tus clientes</h2>
-            <article class="card glass">
-                <h3>Centro de Soluciones Logísticas</h3>
-                <p>
-                    Visita nuestra sección donde encontraras un simulador de inversión logística
-                    para proyectar costos de traslado de forma referencial.
-                </p>
-                <div class="hero-actions" style="margin-top: .75rem;">
-                    <a class="btn btn-primary" href="{{ route('soluciones') }}">Explorar</a>
-                </div>
-            </article>
-        </section>
 
         <section id="ubicacion" class="section">
             <h2 class="section-title">Ubicación</h2>
