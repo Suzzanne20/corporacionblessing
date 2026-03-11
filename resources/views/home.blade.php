@@ -459,6 +459,31 @@
             padding: 10px;
             border: 1px solid rgba(15,23,42,.06);
             }
+
+
+        .whatsapp-float {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: #25D366;
+            color: #fff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: translateY(-2px) scale(1.04);
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.24);
+        }
+
     </style>
 </head>
 
@@ -571,7 +596,7 @@
                     <p>Estamos ubicados estratégicamente asegurar tiempos de respuesta eficientes para cada cliente</p>
                     <p><strong>Dirección:</strong> Puerto Barrios, Izabal</p>
                     <p><strong>Horario:</strong> Lunes a Sábado · 8:00 AM - 6:00 PM</p>
-                    <p><strong>Teléfono:</strong> +502 4557-3507</p>
+                    <p><strong>Teléfono:</strong> +502 3627-4581</p>
                 </article>
                 <article class="glass map">
                     <iframe
@@ -588,7 +613,7 @@
             <h2 class="section-title" style="color:#fff; margin-bottom: 0;">Contáctanos</h2>
             <p>Cuéntanos el tipo de carga y destino. Te apoyamos con una cotización y coordinación inmediata.</p>
             <ul class="contact-list">
-                <li>📞 +502 4557-3507</li>
+                <li>📞 +502 3627-4581</li>
                 <li>✉️ logistica@corporacionblessing.com</li>
                 <li>📍 Puerto Barrios, Izabal</li>
             </ul>
@@ -598,6 +623,11 @@
     <footer>
         © {{ date('Y') }} Corporación Blessing. Todos los derechos reservados.
     </footer>
+
+    <a class="whatsapp-float" href="https://wa.me/50236274581" target="_blank" rel="noopener noreferrer" aria-label="Escríbenos por WhatsApp">
+        💬
+    </a>
+
     <script>
         const navToggle = document.querySelector('.nav-toggle');
         const mainNav = document.getElementById('main-nav');
